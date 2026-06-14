@@ -1,0 +1,863 @@
+Command: ninja all
+[1/12] Linking C static library esp-idf/espressif__mqtt/libespressif__mqtt.a
+[2/12] Linking C static library esp-idf/spiffs/libspiffs.a
+[3/12] Performing build step for 'bootloader'
+[1/1] cd /home/jwillmore/Documents/esProjects/mqtt_example/build/bootloader && /home/jwillmore/.espressif/python_env/idf6.0_py3.14_env/bin/python /opt/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/jwillmore/Documents/esProjects/mqtt_example/build/bootloader/bootloader.bin
+Bootloader binary size 0x5660 bytes. 0x19a0 bytes (23%) free.
+[4/12] No install step for 'bootloader'
+[5/12] Completed 'bootloader'
+[6/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/mqtt_example.c.obj
+FAILED: [code=1] esp-idf/main/CMakeFiles/__idf_main.dir/mqtt_example.c.obj 
+/home/jwillmore/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s2-elf-gcc -DESP_PLATFORM -DESP_PSA_ITS_AVAILABLE -DIDF_VER=\"v6.0.1\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DMBEDTLS_MAJOR_VERSION=4 -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -DTF_PSA_CRYPTO_USER_CONFIG_FILE=\"mbedtls/esp_config.h\" -DUNITY_INCLUDE_CONFIG_H -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/jwillmore/Documents/esProjects/mqtt_example/build/config -I/home/jwillmore/Documents/esProjects/mqtt_example/main -I/opt/esp-idf/components/esp_libc/platform_include -I/opt/esp-idf/components/freertos/config/include -I/opt/esp-idf/components/freertos/config/include/freertos -I/opt/esp-idf/components/freertos/config/xtensa/include -I/opt/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/opt/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/opt/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/opt/esp-idf/components/freertos/esp_additions/include -I/opt/esp-idf/components/esp_hw_support/include -I/opt/esp-idf/components/esp_hw_support/include/soc -I/opt/esp-idf/components/esp_hw_support/ldo/include -I/opt/esp-idf/components/esp_hw_support/debug_probe/include -I/opt/esp-idf/components/esp_hw_support/etm/include -I/opt/esp-idf/components/esp_hw_support/mspi_timing_tuning/include -I/opt/esp-idf/components/esp_hw_support/mspi_timing_tuning/tuning_scheme_impl/include -I/opt/esp-idf/components/esp_hw_support/power_supply/include -I/opt/esp-idf/components/esp_hw_support/modem/include -I/opt/esp-idf/components/esp_hw_support/include/soc/esp32s2 -I/opt/esp-idf/components/esp_hw_support/port/esp32s2/. -I/opt/esp-idf/components/esp_hw_support/port/esp32s2/include -I/opt/esp-idf/components/heap/include -I/opt/esp-idf/components/heap/tlsf -I/opt/esp-idf/components/log/include -I/opt/esp-idf/components/soc/include -I/opt/esp-idf/components/soc/esp32s2 -I/opt/esp-idf/components/soc/esp32s2/include -I/opt/esp-idf/components/soc/esp32s2/register -I/opt/esp-idf/components/hal/platform_port/include -I/opt/esp-idf/components/hal/esp32s2/include -I/opt/esp-idf/components/hal/include -I/opt/esp-idf/components/esp_rom/include -I/opt/esp-idf/components/esp_rom/esp32s2/include -I/opt/esp-idf/components/esp_rom/esp32s2/include/esp32s2 -I/opt/esp-idf/components/esp_rom/esp32s2 -I/opt/esp-idf/components/esp_common/include -I/opt/esp-idf/components/esp_system/include -I/opt/esp-idf/components/esp_system/port/soc -I/opt/esp-idf/components/esp_system/port/include/private -I/opt/esp-idf/components/esp_stdio/include -I/opt/esp-idf/components/xtensa/esp32s2/include -I/opt/esp-idf/components/xtensa/include -I/opt/esp-idf/components/xtensa/deprecated_include -I/opt/esp-idf/components/esp_hal_gpio/include -I/opt/esp-idf/components/esp_hal_gpio/esp32s2/include -I/opt/esp-idf/components/esp_hal_usb/include -I/opt/esp-idf/components/esp_hal_usb/esp32s2/include -I/opt/esp-idf/components/esp_hal_pmu/include -I/opt/esp-idf/components/esp_hal_pmu/esp32s2/include -I/opt/esp-idf/components/esp_hal_ana_conv/include -I/opt/esp-idf/components/esp_hal_ana_conv/esp32s2/include -I/opt/esp-idf/components/esp_hal_dma/include -I/opt/esp-idf/components/esp_hal_dma/esp32s2/include -I/opt/esp-idf/components/lwip/include -I/opt/esp-idf/components/lwip/include/apps -I/opt/esp-idf/components/lwip/lwip/src/include -I/opt/esp-idf/components/lwip/port/include -I/opt/esp-idf/components/lwip/port/freertos/include -I/opt/esp-idf/components/lwip/port/esp32xx/include -I/opt/esp-idf/components/lwip/port/esp32xx/include/arch -I/opt/esp-idf/components/lwip/port/esp32xx/include/sys -I/home/jwillmore/Documents/esProjects/mqtt_example/managed_components/espressif__mqtt/include -I/opt/esp-idf/components/esp_event/include -I/opt/esp-idf/components/tcp_transport/include -I/opt/esp-idf/components/esp-tls -I/opt/esp-idf/components/esp-tls/esp-tls-crypto -I/opt/esp-idf/components/mbedtls/port/include -I/opt/esp-idf/components/mbedtls/mbedtls/include -I/opt/esp-idf/components/mbedtls/mbedtls/library -I/opt/esp-idf/components/mbedtls/mbedtls/tf-psa-crypto/core -I/opt/esp-idf/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/src -I/opt/esp-idf/components/mbedtls/esp_crt_bundle/include -I/opt/esp-idf/components/mbedtls/port/psa_driver/include -I/opt/esp-idf/components/esp_security/include -I/opt/esp-idf/components/esp_hal_security/esp32s2/include -I/opt/esp-idf/components/esp_hal_security/include -I/opt/esp-idf/components/mbedtls/mbedtls/tf-psa-crypto/include -I/opt/esp-idf/components/mbedtls/mbedtls/tf-psa-crypto/drivers/builtin/include -I/opt/esp-idf/components/mbedtls/mbedtls/tf-psa-crypto/drivers/everest/include -I/opt/esp-idf/components/mbedtls/mbedtls/tf-psa-crypto/drivers/p256-m -I/opt/esp-idf/components/esp_timer/include -I/opt/esp-idf/components/esp_hal_gpspi/include -I/opt/esp-idf/components/esp_hal_gpspi/esp32s2/include -I/opt/esp-idf/components/esp_hal_clock/include -I/opt/esp-idf/components/esp_hal_clock/esp32s2/include -I/opt/esp-idf/components/esp_hal_mspi/include -I/opt/esp-idf/components/esp_hal_mspi/esp32s2/include -I/opt/esp-idf/components/esp_blockdev/include -I/opt/esp-idf/components/esp_app_format/include -I/opt/esp-idf/components/esp_bootloader_format/include -I/opt/esp-idf/components/app_update/include -I/opt/esp-idf/components/bootloader_support/include -I/opt/esp-idf/components/bootloader_support/bootloader_flash/include -I/opt/esp-idf/components/esp_partition/include -I/opt/esp-idf/components/efuse/include -I/opt/esp-idf/components/efuse/esp32s2/include -I/opt/esp-idf/components/esp_driver_gpio/include -I/opt/esp-idf/components/esp_hal_uart/include -I/opt/esp-idf/components/esp_hal_uart/esp32s2/include -I/opt/esp-idf/components/esp_pm/include -I/opt/esp-idf/components/esp_mm/include -I/opt/esp-idf/components/esp_driver_dma/include -I/opt/esp-idf/components/esp_hal_timg/include -I/opt/esp-idf/components/esp_hal_timg/esp32s2/include -I/opt/esp-idf/components/esp_hal_wdt/include -I/opt/esp-idf/components/esp_hal_wdt/esp32s2/include -I/opt/esp-idf/components/esp_hal_rtc_timer/include -I/opt/esp-idf/components/esp_hal_rtc_timer/esp32s2/include -I/opt/esp-idf/components/spi_flash/include -I/opt/esp-idf/components/esp_usb_cdc_rom_console/include -I/opt/esp-idf/components/esp_hal_touch_sens/esp32s2/include -I/opt/esp-idf/components/esp_hal_touch_sens/include -I/opt/esp-idf/components/esp_hal_i2s/include -I/opt/esp-idf/components/esp_hal_i2s/esp32s2/include -I/opt/esp-idf/components/pthread/include -I/opt/esp-idf/components/esp_ringbuf/include -I/opt/esp-idf/components/esp_psram/include -I/opt/esp-idf/components/esp_psram/xip_impl/include -I/opt/esp-idf/components/esp_driver_uart/include -I/opt/esp-idf/components/vfs/include -I/opt/esp-idf/components/esp_driver_gptimer/include -I/opt/esp-idf/components/app_trace/include -I/opt/esp-idf/components/nvs_sec_provider/include -I/opt/esp-idf/components/nvs_flash/include -I/opt/esp-idf/components/esp_phy/include -I/opt/esp-idf/components/esp_phy/esp32s2/include -I/opt/esp-idf/components/esp_driver_usb_serial_jtag/include -I/opt/esp-idf/components/esp_netif/include -I/opt/esp-idf/components/wpa_supplicant/include -I/opt/esp-idf/components/wpa_supplicant/port/include -I/opt/esp-idf/components/wpa_supplicant/esp_supplicant/include -I/opt/esp-idf/components/esp_coex/include -I/opt/esp-idf/components/esp_wifi/include -I/opt/esp-idf/components/esp_wifi/include/local -I/opt/esp-idf/components/esp_wifi/wifi_apps/include -I/opt/esp-idf/components/esp_wifi/wifi_apps/nan_app/include -I/opt/esp-idf/components/esp_driver_spi/include -I/opt/esp-idf/components/esp_gdbstub/include -I/opt/esp-idf/components/unity/include -I/opt/esp-idf/components/unity/unity/src -I/opt/esp-idf/components/cmock/CMock/src -I/opt/esp-idf/components/console -I/opt/esp-idf/components/esp_hal_i2c/esp32s2/include -I/opt/esp-idf/components/esp_hal_i2c/include -I/opt/esp-idf/components/esp_hal_twai/include -I/opt/esp-idf/components/esp_hal_twai/esp32s2/include -I/opt/esp-idf/components/driver/i2c/include -I/opt/esp-idf/components/driver/touch_sensor/include -I/opt/esp-idf/components/driver/twai/include -I/opt/esp-idf/components/driver/touch_sensor/esp32s2/include -I/opt/esp-idf/components/http_parser -I/opt/esp-idf/components/esp_adc/include -I/opt/esp-idf/components/esp_adc/interface -I/opt/esp-idf/components/esp_adc/esp32s2/include -I/opt/esp-idf/components/esp_blockdev_util/include -I/opt/esp-idf/components/esp_hal_ana_cmpr/include -I/opt/esp-idf/components/esp_driver_ana_cmpr/include -I/opt/esp-idf/components/esp_driver_bitscrambler/include -I/opt/esp-idf/components/esp_hal_cam/include -I/opt/esp-idf/components/esp_driver_isp/include -I/opt/esp-idf/components/esp_driver_cam/include -I/opt/esp-idf/components/esp_driver_cam/interface -I/opt/esp-idf/components/esp_driver_dac/include -I/opt/esp-idf/components/esp_driver_i2c/include -I/opt/esp-idf/components/esp_driver_i2s/include -I/opt/esp-idf/components/esp_driver_i3c/include -I/opt/esp-idf/components/esp_hal_jpeg/include -I/opt/esp-idf/components/esp_driver_jpeg/include -I/opt/esp-idf/components/esp_hal_ledc/include -I/opt/esp-idf/components/esp_hal_ledc/esp32s2/include -I/opt/esp-idf/components/esp_driver_ledc/include -I/opt/esp-idf/components/esp_hal_mcpwm/include -I/opt/esp-idf/components/esp_driver_mcpwm/include -I/opt/esp-idf/components/esp_hal_parlio/include -I/opt/esp-idf/components/esp_driver_parlio/include -I/opt/esp-idf/components/esp_hal_pcnt/include -I/opt/esp-idf/components/esp_hal_pcnt/esp32s2/include -I/opt/esp-idf/components/esp_driver_pcnt/include -I/opt/esp-idf/components/esp_hal_ppa/include -I/opt/esp-idf/components/esp_driver_ppa/include -I/opt/esp-idf/components/esp_hal_rmt/include -I/opt/esp-idf/components/esp_hal_rmt/esp32s2/include -I/opt/esp-idf/components/esp_driver_rmt/include -I/opt/esp-idf/components/esp_hal_sd/include -I/opt/esp-idf/components/sdmmc/include -I/opt/esp-idf/components/esp_driver_sd_intf/include -I/opt/esp-idf/components/esp_driver_sdio/include -I/opt/esp-idf/components/esp_driver_sdm/include -I/opt/esp-idf/components/esp_driver_sdmmc/include -I/opt/esp-idf/components/esp_driver_sdmmc/legacy/include -I/opt/esp-idf/components/esp_driver_sdspi/include -I/opt/esp-idf/components/esp_driver_touch_sens/include -I/opt/esp-idf/components/esp_driver_touch_sens/hw_ver2/include -I/opt/esp-idf/components/esp_driver_tsens/include -I/opt/esp-idf/components/esp_driver_twai/include -I/opt/esp-idf/components/esp_eth/include -I/opt/esp-idf/components/esp_hal_ieee802154/include -I/opt/esp-idf/components/esp_hal_lcd/include -I/opt/esp-idf/components/esp_hid/include -I/opt/esp-idf/components/esp_http_client/include -I/opt/esp-idf/components/esp_http_server/include -I/opt/esp-idf/components/esp_https_ota/include -I/opt/esp-idf/components/esp_https_server/include -I/opt/esp-idf/components/esp_lcd/include -I/opt/esp-idf/components/esp_lcd/interface -I/opt/esp-idf/components/protobuf-c/protobuf-c -I/opt/esp-idf/components/protocomm/include/common -I/opt/esp-idf/components/protocomm/include/security -I/opt/esp-idf/components/protocomm/include/transports -I/opt/esp-idf/components/protocomm/include/crypto/srp6a -I/opt/esp-idf/components/protocomm/proto-c -I/opt/esp-idf/components/esp_local_ctrl/include -I/opt/esp-idf/components/esp_trace/include -I/opt/esp-idf/components/wear_levelling/include -I/opt/esp-idf/components/fatfs/diskio -I/opt/esp-idf/components/fatfs/src -I/opt/esp-idf/components/fatfs/vfs -I/opt/esp-idf/components/idf_test/include -I/opt/esp-idf/components/idf_test/include/esp32s2 -I/opt/esp-idf/components/ieee802154/include -I/opt/esp-idf/components/perfmon/include -I/opt/esp-idf/components/rt/include -I/opt/esp-idf/components/spiffs/include @"/home/jwillmore/Documents/esProjects/mqtt_example/build/toolchain/cflags" -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/home/jwillmore/Documents/esProjects/mqtt_example=. -fmacro-prefix-map=/opt/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu23 -Wno-old-style-declaration -fzero-init-padding-bits=all -fno-malloc-dce -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/mqtt_example.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/mqtt_example.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/mqtt_example.c.obj -c /home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:27:8: error: unknown type name 'esp_mqtt5_user_property_item_t'
+   27 | static esp_mqtt5_user_property_item_t user_property_arr[] = {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:28:9: error: braces around scalar initializer [-Werror]
+   28 |         {"board", "esp32"},
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:28:9: note: (near initialization for 'user_property_arr[0]')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:28:10: error: initialization of 'int' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+   28 |         {"board", "esp32"},
+      |          ^~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:28:10: note: (near initialization for 'user_property_arr[0]')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:28:19: error: excess elements in scalar initializer [-Werror]
+   28 |         {"board", "esp32"},
+      |                   ^~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:28:19: note: (near initialization for 'user_property_arr[0]')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:29:9: error: braces around scalar initializer [-Werror]
+   29 |         {"u", "user"},
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:29:9: note: (near initialization for 'user_property_arr[1]')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:29:10: error: initialization of 'int' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+   29 |         {"u", "user"},
+      |          ^~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:29:10: note: (near initialization for 'user_property_arr[1]')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:29:15: error: excess elements in scalar initializer [-Werror]
+   29 |         {"u", "user"},
+      |               ^~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:29:15: note: (near initialization for 'user_property_arr[1]')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:30:9: error: braces around scalar initializer [-Werror]
+   30 |         {"p", "password"}
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:30:9: note: (near initialization for 'user_property_arr[2]')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:30:10: error: initialization of 'int' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+   30 |         {"p", "password"}
+      |          ^~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:30:10: note: (near initialization for 'user_property_arr[2]')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:30:15: error: excess elements in scalar initializer [-Werror]
+   30 |         {"p", "password"}
+      |               ^~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:30:15: note: (near initialization for 'user_property_arr[2]')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:35:8: error: unknown type name 'esp_mqtt5_publish_property_config_t'
+   35 | static esp_mqtt5_publish_property_config_t publish_property = {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:36:5: error: field name not in record or union initializer
+   36 |     .payload_format_indicator = 1,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:36:5: note: (near initialization for 'publish_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:37:5: error: field name not in record or union initializer
+   37 |     .message_expiry_interval = 1000,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:37:5: note: (near initialization for 'publish_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:37:32: error: excess elements in scalar initializer [-Werror]
+   37 |     .message_expiry_interval = 1000,
+      |                                ^~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:37:32: note: (near initialization for 'publish_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:38:5: error: field name not in record or union initializer
+   38 |     .topic_alias = 0,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:38:5: note: (near initialization for 'publish_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:38:20: error: excess elements in scalar initializer [-Werror]
+   38 |     .topic_alias = 0,
+      |                    ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:38:20: note: (near initialization for 'publish_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:39:5: error: field name not in record or union initializer
+   39 |     .response_topic = "/topic/test/response",
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:39:5: note: (near initialization for 'publish_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:39:23: error: excess elements in scalar initializer [-Werror]
+   39 |     .response_topic = "/topic/test/response",
+      |                       ^~~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:39:23: note: (near initialization for 'publish_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:40:5: error: field name not in record or union initializer
+   40 |     .correlation_data = "123456",
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:40:5: note: (near initialization for 'publish_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:40:25: error: excess elements in scalar initializer [-Werror]
+   40 |     .correlation_data = "123456",
+      |                         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:40:25: note: (near initialization for 'publish_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:41:5: error: field name not in record or union initializer
+   41 |     .correlation_data_len = 6,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:41:5: note: (near initialization for 'publish_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:41:29: error: excess elements in scalar initializer [-Werror]
+   41 |     .correlation_data_len = 6,
+      |                             ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:41:29: note: (near initialization for 'publish_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:44:8: error: unknown type name 'esp_mqtt5_subscribe_property_config_t'
+   44 | static esp_mqtt5_subscribe_property_config_t subscribe_property = {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:45:5: error: field name not in record or union initializer
+   45 |     .subscribe_id = 25555,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:45:5: note: (near initialization for 'subscribe_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:46:5: error: field name not in record or union initializer
+   46 |     .no_local_flag = false,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:46:5: note: (near initialization for 'subscribe_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:46:22: error: excess elements in scalar initializer [-Werror]
+   46 |     .no_local_flag = false,
+      |                      ^~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:46:22: note: (near initialization for 'subscribe_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:47:5: error: field name not in record or union initializer
+   47 |     .retain_as_published_flag = false,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:47:5: note: (near initialization for 'subscribe_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:47:33: error: excess elements in scalar initializer [-Werror]
+   47 |     .retain_as_published_flag = false,
+      |                                 ^~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:47:33: note: (near initialization for 'subscribe_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:48:5: error: field name not in record or union initializer
+   48 |     .retain_handle = 0,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:48:5: note: (near initialization for 'subscribe_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:48:22: error: excess elements in scalar initializer [-Werror]
+   48 |     .retain_handle = 0,
+      |                      ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:48:22: note: (near initialization for 'subscribe_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:49:5: error: field name not in record or union initializer
+   49 |     .is_share_subscribe = true,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:49:5: note: (near initialization for 'subscribe_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:49:27: error: excess elements in scalar initializer [-Werror]
+   49 |     .is_share_subscribe = true,
+      |                           ^~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:49:27: note: (near initialization for 'subscribe_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:50:5: error: field name not in record or union initializer
+   50 |     .share_name = "group1",
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:50:5: note: (near initialization for 'subscribe_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:50:19: error: excess elements in scalar initializer [-Werror]
+   50 |     .share_name = "group1",
+      |                   ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:50:19: note: (near initialization for 'subscribe_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:53:8: error: unknown type name 'esp_mqtt5_subscribe_property_config_t'
+   53 | static esp_mqtt5_subscribe_property_config_t subscribe1_property = {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:54:5: error: field name not in record or union initializer
+   54 |     .subscribe_id = 25555,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:54:5: note: (near initialization for 'subscribe1_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:55:5: error: field name not in record or union initializer
+   55 |     .no_local_flag = true,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:55:5: note: (near initialization for 'subscribe1_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:55:22: error: excess elements in scalar initializer [-Werror]
+   55 |     .no_local_flag = true,
+      |                      ^~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:55:22: note: (near initialization for 'subscribe1_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:56:5: error: field name not in record or union initializer
+   56 |     .retain_as_published_flag = false,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:56:5: note: (near initialization for 'subscribe1_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:56:33: error: excess elements in scalar initializer [-Werror]
+   56 |     .retain_as_published_flag = false,
+      |                                 ^~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:56:33: note: (near initialization for 'subscribe1_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:57:5: error: field name not in record or union initializer
+   57 |     .retain_handle = 0,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:57:5: note: (near initialization for 'subscribe1_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:57:22: error: excess elements in scalar initializer [-Werror]
+   57 |     .retain_handle = 0,
+      |                      ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:57:22: note: (near initialization for 'subscribe1_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:60:8: error: unknown type name 'esp_mqtt5_unsubscribe_property_config_t'
+   60 | static esp_mqtt5_unsubscribe_property_config_t unsubscribe_property = {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:61:5: error: field name not in record or union initializer
+   61 |     .is_share_subscribe = true,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:61:5: note: (near initialization for 'unsubscribe_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:62:5: error: field name not in record or union initializer
+   62 |     .share_name = "group1",
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:62:5: note: (near initialization for 'unsubscribe_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:62:19: error: excess elements in scalar initializer [-Werror]
+   62 |     .share_name = "group1",
+      |                   ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:62:19: note: (near initialization for 'unsubscribe_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:65:8: error: unknown type name 'esp_mqtt5_disconnect_property_config_t'
+   65 | static esp_mqtt5_disconnect_property_config_t disconnect_property = {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:66:5: error: field name not in record or union initializer
+   66 |     .session_expiry_interval = 60,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:66:5: note: (near initialization for 'disconnect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:67:5: error: field name not in record or union initializer
+   67 |     .disconnect_reason = 0,
+      |     ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:67:5: note: (near initialization for 'disconnect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:67:26: error: excess elements in scalar initializer [-Werror]
+   67 |     .disconnect_reason = 0,
+      |                          ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:67:26: note: (near initialization for 'disconnect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:70:33: error: unknown type name 'mqtt5_user_property_handle_t'
+   70 | static void print_user_property(mqtt5_user_property_handle_t user_property)
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c: In function 'mqtt5_event_handler':
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:110:9: error: implicit declaration of function 'print_user_property' [-Wimplicit-function-declaration]
+  110 |         print_user_property(event->property->user_property);
+      |         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:110:34: error: 'esp_mqtt_event_t' has no member named 'property'
+  110 |         print_user_property(event->property->user_property);
+      |                                  ^~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:111:9: error: implicit declaration of function 'esp_mqtt5_client_set_user_property'; did you mean 'esp_mqtt_client_get_transport'? [-Wimplicit-function-declaration]
+  111 |         esp_mqtt5_client_set_user_property(&publish_property.user_property, user_property_arr, USE_PROPERTY_ARR_SIZE);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         esp_mqtt_client_get_transport
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:111:61: error: request for member 'user_property' in something not a structure or union
+  111 |         esp_mqtt5_client_set_user_property(&publish_property.user_property, user_property_arr, USE_PROPERTY_ARR_SIZE);
+      |                                                             ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:33:66: error: 'esp_mqtt5_user_property_item_t' undeclared (first use in this function)
+   33 | #define USE_PROPERTY_ARR_SIZE   sizeof(user_property_arr)/sizeof(esp_mqtt5_user_property_item_t)
+      |                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:111:96: note: in expansion of macro 'USE_PROPERTY_ARR_SIZE'
+  111 |         esp_mqtt5_client_set_user_property(&publish_property.user_property, user_property_arr, USE_PROPERTY_ARR_SIZE);
+      |                                                                                                ^~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:33:66: note: each undeclared identifier is reported only once for each function it appears in
+   33 | #define USE_PROPERTY_ARR_SIZE   sizeof(user_property_arr)/sizeof(esp_mqtt5_user_property_item_t)
+      |                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:111:96: note: in expansion of macro 'USE_PROPERTY_ARR_SIZE'
+  111 |         esp_mqtt5_client_set_user_property(&publish_property.user_property, user_property_arr, USE_PROPERTY_ARR_SIZE);
+      |                                                                                                ^~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:112:9: error: implicit declaration of function 'esp_mqtt5_client_set_publish_property'; did you mean 'esp_mqtt_client_get_transport'? [-Wimplicit-function-declaration]
+  112 |         esp_mqtt5_client_set_publish_property(client, &publish_property);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         esp_mqtt_client_get_transport
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:114:9: error: implicit declaration of function 'esp_mqtt5_client_delete_user_property' [-Wimplicit-function-declaration]
+  114 |         esp_mqtt5_client_delete_user_property(publish_property.user_property);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:114:63: error: request for member 'user_property' in something not a structure or union
+  114 |         esp_mqtt5_client_delete_user_property(publish_property.user_property);
+      |                                                               ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:115:25: error: request for member 'user_property' in something not a structure or union
+  115 |         publish_property.user_property = NULL;
+      |                         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:118:63: error: request for member 'user_property' in something not a structure or union
+  118 |         esp_mqtt5_client_set_user_property(&subscribe_property.user_property, user_property_arr, USE_PROPERTY_ARR_SIZE);
+      |                                                               ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:119:9: error: implicit declaration of function 'esp_mqtt5_client_set_subscribe_property'; did you mean 'esp_mqtt_client_subscribe_multiple'? [-Wimplicit-function-declaration]
+  119 |         esp_mqtt5_client_set_subscribe_property(client, &subscribe_property);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         esp_mqtt_client_subscribe_multiple
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:121:65: error: request for member 'user_property' in something not a structure or union
+  121 |         esp_mqtt5_client_delete_user_property(subscribe_property.user_property);
+      |                                                                 ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:122:27: error: request for member 'user_property' in something not a structure or union
+  122 |         subscribe_property.user_property = NULL;
+      |                           ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:125:64: error: request for member 'user_property' in something not a structure or union
+  125 |         esp_mqtt5_client_set_user_property(&subscribe1_property.user_property, user_property_arr, USE_PROPERTY_ARR_SIZE);
+      |                                                                ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:128:66: error: request for member 'user_property' in something not a structure or union
+  128 |         esp_mqtt5_client_delete_user_property(subscribe1_property.user_property);
+      |                                                                  ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:129:28: error: request for member 'user_property' in something not a structure or union
+  129 |         subscribe1_property.user_property = NULL;
+      |                            ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:132:65: error: request for member 'user_property' in something not a structure or union
+  132 |         esp_mqtt5_client_set_user_property(&unsubscribe_property.user_property, user_property_arr, USE_PROPERTY_ARR_SIZE);
+      |                                                                 ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:133:9: error: implicit declaration of function 'esp_mqtt5_client_set_unsubscribe_property'; did you mean 'esp_mqtt_client_unsubscribe'? [-Wimplicit-function-declaration]
+  133 |         esp_mqtt5_client_set_unsubscribe_property(client, &unsubscribe_property);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         esp_mqtt_client_unsubscribe
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:136:67: error: request for member 'user_property' in something not a structure or union
+  136 |         esp_mqtt5_client_delete_user_property(unsubscribe_property.user_property);
+      |                                                                   ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:137:29: error: request for member 'user_property' in something not a structure or union
+  137 |         unsubscribe_property.user_property = NULL;
+      |                             ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:141:34: error: 'esp_mqtt_event_t' has no member named 'property'
+  141 |         print_user_property(event->property->user_property);
+      |                                  ^~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:145:34: error: 'esp_mqtt_event_t' has no member named 'property'
+  145 |         print_user_property(event->property->user_property);
+      |                                  ^~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:152:34: error: 'esp_mqtt_event_t' has no member named 'property'
+  152 |         print_user_property(event->property->user_property);
+      |                                  ^~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:153:64: error: request for member 'user_property' in something not a structure or union
+  153 |         esp_mqtt5_client_set_user_property(&disconnect_property.user_property, user_property_arr, USE_PROPERTY_ARR_SIZE);
+      |                                                                ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:154:9: error: implicit declaration of function 'esp_mqtt5_client_set_disconnect_property'; did you mean 'esp_mqtt_client_disconnect'? [-Wimplicit-function-declaration]
+  154 |         esp_mqtt5_client_set_disconnect_property(client, &disconnect_property);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         esp_mqtt_client_disconnect
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:155:66: error: request for member 'user_property' in something not a structure or union
+  155 |         esp_mqtt5_client_delete_user_property(disconnect_property.user_property);
+      |                                                                  ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:156:28: error: request for member 'user_property' in something not a structure or union
+  156 |         disconnect_property.user_property = NULL;
+      |                            ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:161:34: error: 'esp_mqtt_event_t' has no member named 'property'
+  161 |         print_user_property(event->property->user_property);
+      |                                  ^~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:165:34: error: 'esp_mqtt_event_t' has no member named 'property'
+  165 |         print_user_property(event->property->user_property);
+      |                                  ^~
+In file included from /home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:15:
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:166:62: error: 'esp_mqtt_event_t' has no member named 'property'
+  166 |         ESP_LOGI(TAG, "payload_format_indicator is %d", event->property->payload_format_indicator);
+      |                                                              ^~
+/opt/esp-idf/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:166:9: note: in expansion of macro 'ESP_LOGI'
+  166 |         ESP_LOGI(TAG, "payload_format_indicator is %d", event->property->payload_format_indicator);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:166:62: error: 'esp_mqtt_event_t' has no member named 'property'
+  166 |         ESP_LOGI(TAG, "payload_format_indicator is %d", event->property->payload_format_indicator);
+      |                                                              ^~
+/opt/esp-idf/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:166:9: note: in expansion of macro 'ESP_LOGI'
+  166 |         ESP_LOGI(TAG, "payload_format_indicator is %d", event->property->payload_format_indicator);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:166:62: error: 'esp_mqtt_event_t' has no member named 'property'
+  166 |         ESP_LOGI(TAG, "payload_format_indicator is %d", event->property->payload_format_indicator);
+      |                                                              ^~
+/opt/esp-idf/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:166:9: note: in expansion of macro 'ESP_LOGI'
+  166 |         ESP_LOGI(TAG, "payload_format_indicator is %d", event->property->payload_format_indicator);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:166:62: error: 'esp_mqtt_event_t' has no member named 'property'
+  166 |         ESP_LOGI(TAG, "payload_format_indicator is %d", event->property->payload_format_indicator);
+      |                                                              ^~
+/opt/esp-idf/components/log/include/esp_log.h:223:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  223 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:166:9: note: in expansion of macro 'ESP_LOGI'
+  166 |         ESP_LOGI(TAG, "payload_format_indicator is %d", event->property->payload_format_indicator);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:166:62: error: 'esp_mqtt_event_t' has no member named 'property'
+  166 |         ESP_LOGI(TAG, "payload_format_indicator is %d", event->property->payload_format_indicator);
+      |                                                              ^~
+/opt/esp-idf/components/log/include/esp_log.h:224:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  224 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:166:9: note: in expansion of macro 'ESP_LOGI'
+  166 |         ESP_LOGI(TAG, "payload_format_indicator is %d", event->property->payload_format_indicator);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:54: error: 'esp_mqtt_event_t' has no member named 'property'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |                                                      ^~
+/opt/esp-idf/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:9: note: in expansion of macro 'ESP_LOGI'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:91: error: 'esp_mqtt_event_t' has no member named 'property'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |                                                                                           ^~
+/opt/esp-idf/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:9: note: in expansion of macro 'ESP_LOGI'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:54: error: 'esp_mqtt_event_t' has no member named 'property'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |                                                      ^~
+/opt/esp-idf/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:9: note: in expansion of macro 'ESP_LOGI'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:91: error: 'esp_mqtt_event_t' has no member named 'property'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |                                                                                           ^~
+/opt/esp-idf/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:9: note: in expansion of macro 'ESP_LOGI'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:54: error: 'esp_mqtt_event_t' has no member named 'property'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |                                                      ^~
+/opt/esp-idf/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:9: note: in expansion of macro 'ESP_LOGI'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:91: error: 'esp_mqtt_event_t' has no member named 'property'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |                                                                                           ^~
+/opt/esp-idf/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:9: note: in expansion of macro 'ESP_LOGI'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:54: error: 'esp_mqtt_event_t' has no member named 'property'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |                                                      ^~
+/opt/esp-idf/components/log/include/esp_log.h:223:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  223 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:9: note: in expansion of macro 'ESP_LOGI'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:91: error: 'esp_mqtt_event_t' has no member named 'property'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |                                                                                           ^~
+/opt/esp-idf/components/log/include/esp_log.h:223:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  223 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:9: note: in expansion of macro 'ESP_LOGI'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:54: error: 'esp_mqtt_event_t' has no member named 'property'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |                                                      ^~
+/opt/esp-idf/components/log/include/esp_log.h:224:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  224 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:9: note: in expansion of macro 'ESP_LOGI'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:91: error: 'esp_mqtt_event_t' has no member named 'property'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |                                                                                           ^~
+/opt/esp-idf/components/log/include/esp_log.h:224:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  224 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:167:9: note: in expansion of macro 'ESP_LOGI'
+  167 |         ESP_LOGI(TAG, "response_topic is %.*s", event->property->response_topic_len, event->property->response_topic);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:56: error: 'esp_mqtt_event_t' has no member named 'property'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |                                                        ^~
+/opt/esp-idf/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:9: note: in expansion of macro 'ESP_LOGI'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:95: error: 'esp_mqtt_event_t' has no member named 'property'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |                                                                                               ^~
+/opt/esp-idf/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:9: note: in expansion of macro 'ESP_LOGI'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:56: error: 'esp_mqtt_event_t' has no member named 'property'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |                                                        ^~
+/opt/esp-idf/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:9: note: in expansion of macro 'ESP_LOGI'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:95: error: 'esp_mqtt_event_t' has no member named 'property'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |                                                                                               ^~
+/opt/esp-idf/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:9: note: in expansion of macro 'ESP_LOGI'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:56: error: 'esp_mqtt_event_t' has no member named 'property'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |                                                        ^~
+/opt/esp-idf/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:9: note: in expansion of macro 'ESP_LOGI'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:95: error: 'esp_mqtt_event_t' has no member named 'property'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |                                                                                               ^~
+/opt/esp-idf/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:9: note: in expansion of macro 'ESP_LOGI'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:56: error: 'esp_mqtt_event_t' has no member named 'property'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |                                                        ^~
+/opt/esp-idf/components/log/include/esp_log.h:223:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  223 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:9: note: in expansion of macro 'ESP_LOGI'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:95: error: 'esp_mqtt_event_t' has no member named 'property'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |                                                                                               ^~
+/opt/esp-idf/components/log/include/esp_log.h:223:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  223 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:9: note: in expansion of macro 'ESP_LOGI'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:56: error: 'esp_mqtt_event_t' has no member named 'property'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |                                                        ^~
+/opt/esp-idf/components/log/include/esp_log.h:224:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  224 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:9: note: in expansion of macro 'ESP_LOGI'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:95: error: 'esp_mqtt_event_t' has no member named 'property'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |                                                                                               ^~
+/opt/esp-idf/components/log/include/esp_log.h:224:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  224 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:168:9: note: in expansion of macro 'ESP_LOGI'
+  168 |         ESP_LOGI(TAG, "correlation_data is %.*s", event->property->correlation_data_len, event->property->correlation_data);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:52: error: 'esp_mqtt_event_t' has no member named 'property'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |                                                    ^~
+/opt/esp-idf/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:9: note: in expansion of macro 'ESP_LOGI'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:87: error: 'esp_mqtt_event_t' has no member named 'property'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |                                                                                       ^~
+/opt/esp-idf/components/log/include/esp_log.h:220:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  220 |         if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_ERROR)        { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_ERROR),   tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:9: note: in expansion of macro 'ESP_LOGI'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:52: error: 'esp_mqtt_event_t' has no member named 'property'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |                                                    ^~
+/opt/esp-idf/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:9: note: in expansion of macro 'ESP_LOGI'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:87: error: 'esp_mqtt_event_t' has no member named 'property'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |                                                                                       ^~
+/opt/esp-idf/components/log/include/esp_log.h:221:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  221 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_WARN)    { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_WARN),    tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:9: note: in expansion of macro 'ESP_LOGI'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:52: error: 'esp_mqtt_event_t' has no member named 'property'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |                                                    ^~
+/opt/esp-idf/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:9: note: in expansion of macro 'ESP_LOGI'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:87: error: 'esp_mqtt_event_t' has no member named 'property'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |                                                                                       ^~
+/opt/esp-idf/components/log/include/esp_log.h:222:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  222 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_DEBUG)   { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_DEBUG),   tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:9: note: in expansion of macro 'ESP_LOGI'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:52: error: 'esp_mqtt_event_t' has no member named 'property'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |                                                    ^~
+/opt/esp-idf/components/log/include/esp_log.h:223:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  223 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:9: note: in expansion of macro 'ESP_LOGI'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:87: error: 'esp_mqtt_event_t' has no member named 'property'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |                                                                                       ^~
+/opt/esp-idf/components/log/include/esp_log.h:223:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  223 |         else if (ESP_LOG_GET_LEVEL(configs)==ESP_LOG_VERBOSE) { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_VERBOSE), tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:9: note: in expansion of macro 'ESP_LOGI'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:52: error: 'esp_mqtt_event_t' has no member named 'property'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |                                                    ^~
+/opt/esp-idf/components/log/include/esp_log.h:224:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  224 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:9: note: in expansion of macro 'ESP_LOGI'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:87: error: 'esp_mqtt_event_t' has no member named 'property'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |                                                                                       ^~
+/opt/esp-idf/components/log/include/esp_log.h:224:167: note: in definition of macro 'ESP_LOG_LEVEL'
+  224 |         else                                                  { esp_log(ESP_LOG_CONFIG_INIT(ESP_LOG_INFO),    tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                                                       ^~~~~~~~~~~
+/opt/esp-idf/components/log/include/esp_log.h:127:41: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  127 | #define ESP_LOGI(tag, format, ...) do { ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO, tag, format, ##__VA_ARGS__); } while(0)
+      |                                         ^~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:169:9: note: in expansion of macro 'ESP_LOGI'
+  169 |         ESP_LOGI(TAG, "content_type is %.*s", event->property->content_type_len, event->property->content_type);
+      |         ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:175:34: error: 'esp_mqtt_event_t' has no member named 'property'
+  175 |         print_user_property(event->property->user_property);
+      |                                  ^~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c: In function 'mqtt5_app_start':
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:192:5: error: unknown type name 'esp_mqtt5_connection_property_config_t'
+  192 |     esp_mqtt5_connection_property_config_t connect_property = {
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:193:9: error: field name not in record or union initializer
+  193 |         .session_expiry_interval = 10,
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:193:9: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:194:9: error: field name not in record or union initializer
+  194 |         .maximum_packet_size = 1024,
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:194:9: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:194:32: error: excess elements in scalar initializer [-Werror]
+  194 |         .maximum_packet_size = 1024,
+      |                                ^~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:194:32: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:195:9: error: field name not in record or union initializer
+  195 |         .receive_maximum = 65535,
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:195:9: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:195:28: error: excess elements in scalar initializer [-Werror]
+  195 |         .receive_maximum = 65535,
+      |                            ^~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:195:28: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:196:9: error: field name not in record or union initializer
+  196 |         .topic_alias_maximum = 2,
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:196:9: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:196:32: error: excess elements in scalar initializer [-Werror]
+  196 |         .topic_alias_maximum = 2,
+      |                                ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:196:32: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:197:9: error: field name not in record or union initializer
+  197 |         .request_resp_info = true,
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:197:9: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:197:30: error: excess elements in scalar initializer [-Werror]
+  197 |         .request_resp_info = true,
+      |                              ^~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:197:30: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:198:9: error: field name not in record or union initializer
+  198 |         .request_problem_info = true,
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:198:9: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:198:33: error: excess elements in scalar initializer [-Werror]
+  198 |         .request_problem_info = true,
+      |                                 ^~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:198:33: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:199:9: error: field name not in record or union initializer
+  199 |         .will_delay_interval = 10,
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:199:9: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:199:32: error: excess elements in scalar initializer [-Werror]
+  199 |         .will_delay_interval = 10,
+      |                                ^~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:199:32: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:200:9: error: field name not in record or union initializer
+  200 |         .payload_format_indicator = true,
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:200:9: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:200:37: error: excess elements in scalar initializer [-Werror]
+  200 |         .payload_format_indicator = true,
+      |                                     ^~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:200:37: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:201:9: error: field name not in record or union initializer
+  201 |         .message_expiry_interval = 10,
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:201:9: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:201:36: error: excess elements in scalar initializer [-Werror]
+  201 |         .message_expiry_interval = 10,
+      |                                    ^~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:201:36: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:202:9: error: field name not in record or union initializer
+  202 |         .response_topic = "/test/response",
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:202:9: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:202:27: error: excess elements in scalar initializer [-Werror]
+  202 |         .response_topic = "/test/response",
+      |                           ^~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:202:27: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:203:9: error: field name not in record or union initializer
+  203 |         .correlation_data = "123456",
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:203:9: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:203:29: error: excess elements in scalar initializer [-Werror]
+  203 |         .correlation_data = "123456",
+      |                             ^~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:203:29: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:204:9: error: field name not in record or union initializer
+  204 |         .correlation_data_len = 6,
+      |         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:204:9: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:204:33: error: excess elements in scalar initializer [-Werror]
+  204 |         .correlation_data_len = 6,
+      |                                 ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:204:33: note: (near initialization for 'connect_property')
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:223:57: error: request for member 'user_property' in something not a structure or union
+  223 |     esp_mqtt5_client_set_user_property(&connect_property.user_property, user_property_arr, USE_PROPERTY_ARR_SIZE);
+      |                                                         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:33:66: error: 'esp_mqtt5_user_property_item_t' undeclared (first use in this function)
+   33 | #define USE_PROPERTY_ARR_SIZE   sizeof(user_property_arr)/sizeof(esp_mqtt5_user_property_item_t)
+      |                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:223:92: note: in expansion of macro 'USE_PROPERTY_ARR_SIZE'
+  223 |     esp_mqtt5_client_set_user_property(&connect_property.user_property, user_property_arr, USE_PROPERTY_ARR_SIZE);
+      |                                                                                            ^~~~~~~~~~~~~~~~~~~~~
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:224:57: error: request for member 'will_user_property' in something not a structure or union
+  224 |     esp_mqtt5_client_set_user_property(&connect_property.will_user_property, user_property_arr, USE_PROPERTY_ARR_SIZE);
+      |                                                         ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:225:5: error: implicit declaration of function 'esp_mqtt5_client_set_connect_property'; did you mean 'esp_mqtt_client_get_transport'? [-Wimplicit-function-declaration]
+  225 |     esp_mqtt5_client_set_connect_property(client, &connect_property);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     esp_mqtt_client_get_transport
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:230:59: error: request for member 'user_property' in something not a structure or union
+  230 |     esp_mqtt5_client_delete_user_property(connect_property.user_property);
+      |                                                           ^
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:231:59: error: request for member 'will_user_property' in something not a structure or union
+  231 |     esp_mqtt5_client_delete_user_property(connect_property.will_user_property);
+      |                                                           ^
+In file included from /opt/esp-idf/components/esp_system/include/esp_system.h:12,
+                 from /home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:11:
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c: In function 'app_main':
+/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c:261:21: error: implicit declaration of function 'example_connect' [-Wimplicit-function-declaration]
+  261 |     ESP_ERROR_CHECK(example_connect());
+      |                     ^~~~~~~~~~~~~~~
+/opt/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+cc1: all warnings being treated as errors
+ninja: build stopped: subcommand failed.

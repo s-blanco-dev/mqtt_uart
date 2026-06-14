@@ -1,0 +1,106 @@
+Command: /home/jwillmore/.espressif/python_env/idf6.0_py3.14_env/bin/python /opt/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB1 -b 115200 --toolchain-prefix xtensa-esp32s2-elf- --target esp32s2 --revision 0 /home/jwillmore/Documents/esProjects/mqtt_example/build/mqtt_example.elf /home/jwillmore/Documents/esProjects/mqtt_example/build/bootloader/bootloader.elf -m '/home/jwillmore/.espressif/python_env/idf6.0_py3.14_env/bin/python' '/opt/esp-idf/tools/idf.py' '--port' '/dev/ttyUSB1'
+ESP-ROM:esp32s2-rc4-20191025
+Build:Oct 25 2019
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3ffe5110,len:0x1624
+load:0x4004a000,len:0xbfc
+load:0x4004e000,len:0x33e0
+entry 0x4004a1b4
+[0;32mI (21) boot: ESP-IDF v6.0.1 2nd stage bootloader[0m
+[0;32mI (21) boot: compile time Jun 11 2026 19:07:46[0m
+[0;32mI (22) boot: chip revision: v0.0[0m
+[0;32mI (22) boot: efuse block revision: v0.1[0m
+[0;32mI (26) boot.esp32s2: SPI Speed      : 80MHz[0m
+[0;32mI (30) boot.esp32s2: SPI Mode       : DIO[0m
+[0;32mI (33) boot.esp32s2: SPI Flash Size : 2MB[0m
+[0;32mI (37) boot: Enabling RNG early entropy source...[0m
+[0;32mI (42) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (50) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (57) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (63) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (70) boot: End of partition table[0m
+[0;32mI (73) esp_image: segment 0: paddr=00010020 vaddr=3f000020 size=1fdfch (130556) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0002fe24 vaddr=3ffc7bd0 size=001f4h (   500) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=00030020 vaddr=40080020 size=9be1ch (638492) map[0m
+[0;32mI (238) esp_image: segment 3: paddr=000cbe44 vaddr=3ffc7dc4 size=03cfch ( 15612) load[0m
+[0;32mI (242) esp_image: segment 4: paddr=000cfb48 vaddr=40024000 size=13bc8h ( 80840) load[0m
+[0;32mI (262) esp_image: segment 5: paddr=000e3718 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (272) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (272) boot: Disabling RNG early entropy source...[0m
+[0;32mI (282) cache: Instruction cache 	: size 8KB, 4Ways, cache line size 32Byte[0m
+[0;32mI (282) cache: Data cache 		: size 8KB, 4Ways, cache line size 32Byte[0m
+[0;32mI (299) cpu_start: Unicore app[0m
+[0;32mI (307) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (307) cpu_start: Pro cpu start user code[0m
+[0;32mI (307) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (309) app_init: Application information:[0m
+[0;32mI (313) app_init: Project name:     mqtt_example[0m
+[0;32mI (317) app_init: App version:      1[0m
+[0;32mI (321) app_init: Compile time:     Jun 11 2026 23:11:22[0m
+[0;32mI (326) app_init: ELF file SHA256:  203ce5403...[0m
+[0;32mI (330) app_init: ESP-IDF:          v6.0.1[0m
+[0;32mI (334) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (338) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (342) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (346) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (352) heap_init: At 3FFD0460 len 0002BBA0 (174 KiB): RAM[0m
+[0;32mI (357) heap_init: At 3FFFC000 len 00003A10 (14 KiB): RAM[0m
+[0;32mI (362) heap_init: At 3FF9E000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (368) spi_flash: detected chip: gd[0m
+[0;32mI (371) spi_flash: flash io: dio[0m
+[0;33mW (374) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (391) main_task: Started on CPU0[0m
+[0;32mI (391) main_task: Calling app_main()[0m
+[0;32mI (401) example_connect: Start example_connect.[0m
+[0;32mI (411) wifi:wifi driver task: 3ffff2e0, prio:23, stack:6656, core=0[0m
+[0;32mI (421) wifi:wifi firmware version: b37c951[0m
+[0;32mI (421) wifi:wifi certification version: v7.0[0m
+[0;32mI (421) wifi:config NVS flash: enabled[0m
+[0;32mI (421) wifi:config nano formatting: disabled[0m
+[0;32mI (421) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (431) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (431) wifi:Init management short buffer num: 32[0m
+[0;32mI (431) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (441) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (441) wifi:Init static rx buffer num: 10[0m
+[0;32mI (451) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (451) wifi_init: rx ba win: 6[0m
+[0;32mI (451) wifi_init: accept mbox: 6[0m
+[0;32mI (461) wifi_init: tcpip mbox: 32[0m
+[0;32mI (461) wifi_init: udp mbox: 6[0m
+[0;32mI (461) wifi_init: tcp mbox: 6[0m
+[0;32mI (471) wifi_init: tcp tx win: 5760[0m
+[0;32mI (471) wifi_init: tcp rx win: 5760[0m
+[0;32mI (471) wifi_init: tcp mss: 1440[0m
+[0;32mI (471) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (481) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (481) phy_init: phy_version 2623,ff3f498,Dec 17 2025,14:48:07[0m
+[0;32mI (531) wifi:mode : sta (7c:df:a1:00:ab:00)[0m
+[0;32mI (531) wifi:enable tsf[0m
+[0;32mI (531) example_connect: Connecting to Bola_de_fraile_2.4...[0m
+[0;33mW (531) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (541) example_connect: Waiting for IP(s)[0m
+[0;32mI (3081) wifi:new:<2,1>, old:<1,0>, ap:<255,255>, sta:<2,1>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3081) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3081) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3091) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3211) wifi:connected with Bola_de_fraile_2.4, aid = 7, channel 2, 40U, bssid = c0:c9:e3:b8:4e:fe[0m
+[0;32mI (3211) wifi:security: WPA2-PSK, phy: bgn, rssi: -45, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (3221) wifi:pm start, type: 1[0m
+
+[0;32mI (3221) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3231) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (3251) wifi:<ba-add>idx:0 (ifx:0, c0:c9:e3:b8:4e:fe), tid:0, ssn:2, winSize:64[0m
+[0;32mI (4401) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:7edf:a1ff:fe00:ab00, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (4761) esp_netif_handlers: example_netif_sta ip: 192.168.0.120, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (4761) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.0.120[0m
+[0;32mI (4761) example_common: Connected to example_netif_sta[0m
+[0;32mI (4771) example_common: - IPv4 address: 192.168.0.120,[0m
+[0;32mI (4771) example_common: - IPv6 address: fe80:0000:0000:0000:7edf:a1ff:fe00:ab00, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (4791) NEMO: SALAME[0m
+[0;32mI (4791) NEMO: Esperando conexion al broker MQTT...[0m
+[0;32mI (6111) MQTT_API: Conectado al Broker MQTT[0m
+[0;32mI (6111) NEMO: Exito! Enviando mensajes iniciales.[0m

@@ -1,0 +1,54 @@
+Command: /home/jwillmore/.espressif/python_env/idf6.0_py3.14_env/bin/python /opt/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB1 -b 115200 --toolchain-prefix xtensa-esp32s2-elf- --target esp32s2 --revision 0 /home/jwillmore/Documents/esProjects/mqtt_example/build/mqtt_example.elf /home/jwillmore/Documents/esProjects/mqtt_example/build/bootloader/bootloader.elf -m '/home/jwillmore/.espressif/python_env/idf6.0_py3.14_env/bin/python' '/opt/esp-idf/tools/idf.py' '--port' '/dev/ttyUSB1'
+[0;33m--- esp-idf-monitor 1.9.0 on /dev/ttyUSB1 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x4004a000: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4004a1b4: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4008c1e8: [0;33mapp_main[0m[0m at [0;32m/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c[0m[0m:[1;31m262[0m
+[0m--- 0x4002cc97: [0;33m_esp_error_check_failed[0m[0m at [0;32m/opt/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x4002cccd: [0;33mpanic_abort[0m[0m at [0;32m/opt/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m464[0m
+[0m--- 0x4002cca1: [0;33mesp_system_abort[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x4002c941: [0;33mabort[0m[0m at [0;32m/opt/esp-idf/components/esp_libc/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x4002cc97: [0;33m_esp_error_check_failed[0m[0m at [0;32m/opt/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x4008c1e8: [0;33mapp_main[0m[0m at [0;32m/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c[0m[0m:[1;31m262[0m
+[0m--- 0x40085da7: [0;33mmain_task[0m[0m at [0;32m/opt/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m199[0m
+[0m--- 0x4011b3e2: [0;33mvPortTaskWrapper[0m[0m at [0;32m/opt/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0m--- 0x4002cdb2: [0;33mesp_restart_noos[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/soc/esp32s2/system_internal.c[0m[0m:[1;31m126[0m
+[0m--- 0x4004a000: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4004a1b4: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4008c1e8: [0;33mapp_main[0m[0m at [0;32m/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c[0m[0m:[1;31m262[0m
+[0m--- 0x4002cc97: [0;33m_esp_error_check_failed[0m[0m at [0;32m/opt/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x4002cccd: [0;33mpanic_abort[0m[0m at [0;32m/opt/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m464[0m
+[0m--- 0x4002cca1: [0;33mesp_system_abort[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x4002c941: [0;33mabort[0m[0m at [0;32m/opt/esp-idf/components/esp_libc/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x4002cc97: [0;33m_esp_error_check_failed[0m[0m at [0;32m/opt/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x4008c1e8: [0;33mapp_main[0m[0m at [0;32m/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c[0m[0m:[1;31m262[0m
+[0m--- 0x40085da7: [0;33mmain_task[0m[0m at [0;32m/opt/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m199[0m
+[0m--- 0x4011b3e2: [0;33mvPortTaskWrapper[0m[0m at [0;32m/opt/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0m--- 0x4002cdb2: [0;33mesp_restart_noos[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/soc/esp32s2/system_internal.c[0m[0m:[1;31m126[0m
+[0m--- 0x4004a000: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4004a1b4: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4008c1e8: [0;33mapp_main[0m[0m at [0;32m/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c[0m[0m:[1;31m262[0m
+[0m--- 0x4002cc97: [0;33m_esp_error_check_failed[0m[0m at [0;32m/opt/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x4002cccd: [0;33mpanic_abort[0m[0m at [0;32m/opt/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m464[0m
+[0m--- 0x4002cca1: [0;33mesp_system_abort[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x4002c941: [0;33mabort[0m[0m at [0;32m/opt/esp-idf/components/esp_libc/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x4002cc97: [0;33m_esp_error_check_failed[0m[0m at [0;32m/opt/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x4008c1e8: [0;33mapp_main[0m[0m at [0;32m/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c[0m[0m:[1;31m262[0m
+[0m--- 0x40085da7: [0;33mmain_task[0m[0m at [0;32m/opt/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m199[0m
+[0m--- 0x4011b3e2: [0;33mvPortTaskWrapper[0m[0m at [0;32m/opt/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0m--- 0x4002cdb2: [0;33mesp_restart_noos[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/soc/esp32s2/system_internal.c[0m[0m:[1;31m126[0m
+[0m--- 0x4004a000: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4004a1b4: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4008c1e8: [0;33mapp_main[0m[0m at [0;32m/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c[0m[0m:[1;31m262[0m
+[0m--- 0x4002cc97: [0;33m_esp_error_check_failed[0m[0m at [0;32m/opt/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x4002cccd: [0;33mpanic_abort[0m[0m at [0;32m/opt/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m464[0m
+[0m--- 0x4002cca1: [0;33mesp_system_abort[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x4002c941: [0;33mabort[0m[0m at [0;32m/opt/esp-idf/components/esp_libc/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x4002cc97: [0;33m_esp_error_check_failed[0m[0m at [0;32m/opt/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x4008c1e8: [0;33mapp_main[0m[0m at [0;32m/home/jwillmore/Documents/esProjects/mqtt_example/main/mqtt_example.c[0m[0m:[1;31m262[0m
+[0m--- 0x40085da7: [0;33mmain_task[0m[0m at [0;32m/opt/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m199[0m
+[0m--- 0x4011b3e2: [0;33mvPortTaskWrapper[0m[0m at [0;32m/opt/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0m--- 0x4002cdb2: [0;33mesp_restart_noos[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/soc/esp32s2/system_internal.c[0m[0m:[1;31m126[0m
+[0m--- 0x4004a000: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4004a1b4: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m

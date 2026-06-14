@@ -1,0 +1,18 @@
+Command: ninja all
+[1/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/mqtt_example.c.obj
+[2/9] Linking C static library esp-idf/main/libmain.a
+[3/9] Performing build step for 'bootloader'
+[1/1] cd /home/jwillmore/Documents/esProjects/mqtt_example/build/bootloader && /home/jwillmore/.espressif/python_env/idf6.0_py3.14_env/bin/python /opt/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/jwillmore/Documents/esProjects/mqtt_example/build/bootloader/bootloader.bin
+Bootloader binary size 0x5660 bytes. 0x19a0 bytes (23%) free.
+[4/9] No install step for 'bootloader'
+[5/9] Completed 'bootloader'
+[6/9] Generating esp-idf/esp_system/ld/sections.ld
+[7/9] Linking CXX executable mqtt_example.elf
+[8/9] Generating binary image from built executable
+esptool v5.3.0
+Creating ESP32-S2 image...
+Merged 3 ELF sections.
+Successfully created ESP32-S2 image.
+Generated /home/jwillmore/Documents/esProjects/mqtt_example/build/mqtt_example.bin
+[9/9] cd /home/jwillmore/Documents/esProjects/mqtt_example/build && /home/jwillmore/.espressif/python_env/idf6.0_py3.14_env/bin/python /opt/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/jwillmore/Documents/esProjects/mqtt_example/build/partition_table/partition-table.bin /home/jwillmore/Documents/esProjects/mqtt_example/build/mqtt_example.bin
+mqtt_example.bin binary size 0xd3760 bytes. Smallest app partition is 0x100000 bytes. 0x2c8a0 bytes (17%) free.
