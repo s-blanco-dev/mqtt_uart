@@ -1,6 +1,0 @@
--mlongcalls
--fno-builtin-memcpy
--fno-builtin-memset
--fno-builtin-bzero
-"-specs=/home/jwillmore/Documents/esProjects/mqtt_example/build/specs/picolibc.specs"
--fno-rtti

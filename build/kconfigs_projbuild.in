@@ -1,8 +1,0 @@
-source "/opt/esp-idf/components/app_update/Kconfig.projbuild"
-source "/opt/esp-idf/components/bootloader/Kconfig.projbuild"
-source "/opt/esp-idf/components/esp_app_format/Kconfig.projbuild"
-source "/opt/esp-idf/components/esp_rom/Kconfig.projbuild"
-source "/opt/esp-idf/components/esptool_py/Kconfig.projbuild"
-source "/opt/esp-idf/components/partition_table/Kconfig.projbuild"
-source "/home/jwillmore/Documents/esProjects/mqtt_example/managed_components/espressif__ethernet_init/Kconfig.projbuild"
-source "/opt/esp-idf/examples/common_components/protocol_examples_common/Kconfig.projbuild"
