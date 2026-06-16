@@ -60,7 +60,7 @@ void meu_processador_de_mensagens(void *pvParameters) {
             if (pos < (MAX_LINE_LEN - 1)) {
                 line[pos++] = (char)byte;
             } else {
-                ESP_LOGW(TAG, "UART line too long, discarding");
+                ESP_LOGW(TAG, "UART line too long, discarding"); // mmmmm
 
                 static const char msg[] = "ERROR: line too long\n";
 

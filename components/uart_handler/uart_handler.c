@@ -24,10 +24,12 @@ void uart_init(void) {
     ESP_LOGI(TAG, "UART initialized");
 }
 
+// wrapper
 int uart_read(uint8_t *byte) {
     return uart_read_bytes(UART_NUM, byte, 1, portMAX_DELAY);
 }
 
+// wrapper
 int uart_write(void *msg, size_t size) {
     return uart_write_bytes(UART_NUM, msg, size);
 }
