@@ -10,10 +10,12 @@
 #include <stddef.h>
 
 static const char *TAG = "MQTT_MAIN";
+static const char *TOPIC = "device/messages";
+static const char *BROKER_URI = "mqtt://mqtt-dashboard.com:1883";
 
 void meu_callback(const char *topic, int topic_len, const char *data, int data_len) {
     ESP_LOGI(TAG, "Got message in: %.*s", topic_len, topic);
-    ESP_LOGI(TAG, "Data: %.*s", data_len, data);
+    ESP_LOGI(TAG, "MESSAGE: %.*s", data_len, data);
 }
 
 void meu_processador_de_mensagens(void *pvParameters) {
@@ -48,7 +50,7 @@ void meu_processador_de_mensagens(void *pvParameters) {
 
             ESP_LOGI(TAG, "Publishing: %s", line);
 
-            int msg_id = mqtt_publish("device/messages", line, 1, false);
+            int msg_id = mqtt_publish(TOPIC, line, 1, false);
 
             if (msg_id < 0) {
                 static const char msg[] = "ERROR: publish failed\n";
@@ -81,7 +83,7 @@ void app_main(void) {
     uart_init();
 
     mqtt_config_t config = {
-        .broker_uri = "mqtt://192.168.0.105:1883",
+        .broker_uri = BROKER_URI,
         .username = NULL,
         .password = NULL,
         .on_message_callback = meu_callback,
@@ -92,8 +94,7 @@ void app_main(void) {
 
     if (mqtt_wait_for_connection(15000)) {
         ESP_LOGI(TAG, "Connected to broker");
-        mqtt_subscribe("/uuu/comandos", 1);
-        mqtt_publish("/uuu/arrarte", "ho ho hi", 1, false);
+        mqtt_subscribe(TOPIC, 1);
     } else {
         ESP_LOGE(TAG, "MQTT connection timeout");
     }

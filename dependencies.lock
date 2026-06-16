@@ -132,13 +132,13 @@ dependencies:
       - if: target != linux
       version: ~1.2.0
     source:
-      path: ../../.espressif/v6.0.1/esp-idf/examples/common_components/protocol_examples_common
+      path: ../../../../../opt/esp-idf/examples/common_components/protocol_examples_common
       type: local
     version: '*'
 direct_dependencies:
 - espressif/mqtt
 - idf
 - protocol_examples_common
-manifest_hash: f30bd5d781f449467dd1b657244dd0c6869d47e3973109a7fa0f3b61bd6fa560
+manifest_hash: 87c12fb333fdfd6db41a209948c4c80a62acd45289272367aa9f1da19ab2dd33
 target: esp32s2
 version: 3.0.0
