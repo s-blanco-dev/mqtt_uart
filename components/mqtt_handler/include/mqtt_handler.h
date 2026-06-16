@@ -11,7 +11,7 @@ typedef struct {
     const char *broker_uri;
     const char *username;
     const char *password;
-    mqtt_on_message_cb_t on_message_callback; // Puntero a tu función receptora
+    mqtt_on_message_cb_t on_message_callback;
 } mqtt_config_t;
 
 // --- PUBLIC API ---

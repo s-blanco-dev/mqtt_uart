@@ -1,9 +1,8 @@
 #include "mqtt_handler.h"
-#include "mqtt_client.h"
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
-#include <string.h>
+#include "mqtt_client.h"
 
 static const char *TAG = "MQTT_API";
 
@@ -17,28 +16,28 @@ static void mqtt5_event_handler(void *handler_args, esp_event_base_t base, int32
     esp_mqtt_event_handle_t event = event_data;
 
     switch ((esp_mqtt_event_id_t)event_id) {
-        case MQTT_EVENT_CONNECTED:
-            ESP_LOGI(TAG, "Connected to MQTT broker");
-            xEventGroupSetBits(s_mqtt_event_group, MQTT_CONNECTED_BIT);
-            break;
-            
-        case MQTT_EVENT_DISCONNECTED:
-            ESP_LOGI(TAG, "Desconectado del Broker");
-            xEventGroupClearBits(s_mqtt_event_group, MQTT_CONNECTED_BIT);
-            break;
-            
-        case MQTT_EVENT_DATA:
-            if (s_message_cb != NULL) {
-                s_message_cb(event->topic, event->topic_len, event->data, event->data_len);
-            }
-            break;
-            
-        case MQTT_EVENT_ERROR:
-            ESP_LOGE(TAG, "Error en MQTT");
-            break;
-            
-        default:
-            break;
+    case MQTT_EVENT_CONNECTED:
+        ESP_LOGI(TAG, "Connected to MQTT broker");
+        xEventGroupSetBits(s_mqtt_event_group, MQTT_CONNECTED_BIT);
+        break;
+
+    case MQTT_EVENT_DISCONNECTED:
+        ESP_LOGI(TAG, "Desconectado del Broker");
+        xEventGroupClearBits(s_mqtt_event_group, MQTT_CONNECTED_BIT);
+        break;
+
+    case MQTT_EVENT_DATA:
+        if (s_message_cb != NULL) {
+            s_message_cb(event->topic, event->topic_len, event->data, event->data_len);
+        }
+        break;
+
+    case MQTT_EVENT_ERROR:
+        ESP_LOGE(TAG, "Error en MQTT");
+        break;
+
+    default:
+        break;
     }
 }
 
@@ -49,14 +48,16 @@ void mqtt_app_start(const mqtt_config_t *config) {
     }
 
     s_mqtt_event_group = xEventGroupCreate();
-
     s_message_cb = config->on_message_callback;
 
     esp_mqtt_client_config_t mqtt_cfg = {
         .broker.address.uri = config->broker_uri,
-        .session.protocol_ver = MQTT_PROTOCOL_V_5,
+        .session.protocol_ver = MQTT_PROTOCOL_V_3_1_1,
         .credentials.username = config->username,
         .credentials.authentication.password = config->password,
+        .network.timeout_ms = 10000,
+        .session.keepalive = 60,
+        .session.disable_clean_session = false,
     };
 
     s_mqtt_client = esp_mqtt_client_init(&mqtt_cfg);
@@ -65,30 +66,32 @@ void mqtt_app_start(const mqtt_config_t *config) {
 }
 
 bool mqtt_wait_for_connection(uint32_t timeout_ms) {
-    if (s_mqtt_event_group == NULL) return false;
+    if (s_mqtt_event_group == NULL)
+        return false;
 
-    EventBits_t bits = xEventGroupWaitBits(
-        s_mqtt_event_group,
-        MQTT_CONNECTED_BIT,
-        pdFALSE, // No limpiar el bit al salir (queremos que siga marcado como conectado)
-        pdTRUE,  // Esperar a todos los bits (solo hay uno)
-        pdMS_TO_TICKS(timeout_ms)
-    );
+    EventBits_t bits =
+        xEventGroupWaitBits(s_mqtt_event_group, MQTT_CONNECTED_BIT,
+                            pdFALSE, // No limpiar el bit al salir (queremos que siga marcado como conectado)
+                            pdTRUE,  // Esperar a todos los bits (solo hay uno)
+                            pdMS_TO_TICKS(timeout_ms));
 
     return (bits & MQTT_CONNECTED_BIT) != 0;
 }
 
 int mqtt_publish(const char *topic, const char *payload, int qos, bool retain) {
-    if (s_mqtt_client == NULL) return -1;
+    if (s_mqtt_client == NULL)
+        return -1;
     return esp_mqtt_client_publish(s_mqtt_client, topic, payload, 0, qos, retain ? 1 : 0);
 }
 
 int mqtt_subscribe(const char *topic, int qos) {
-    if (s_mqtt_client == NULL) return -1;
+    if (s_mqtt_client == NULL)
+        return -1;
     return esp_mqtt_client_subscribe(s_mqtt_client, topic, qos);
 }
 
 int mqtt_unsubscribe(const char *topic) {
-    if (s_mqtt_client == NULL) return -1;
+    if (s_mqtt_client == NULL)
+        return -1;
     return esp_mqtt_client_unsubscribe(s_mqtt_client, topic);
 }
